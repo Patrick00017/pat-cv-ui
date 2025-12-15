@@ -1,0 +1,60 @@
+# Visual Studio 文件
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.ide
+
+# 项目文件
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# 编译输出
+Debug/
+Release/
+x64/
+x86/
+build/
+[Bb]in/
+[Oo]bj/
+
+# NuGet 包
+packages/
+*.nupkg
+.nuget/
+NuGet.exe
+
+# Resharper
+_ReSharper.*/
+*.ReSharper.*
+
+# Rider
+.idea/
+
+# 操作系统文件
+Thumbs.db
+.DS_Store
+
+# WPF 特定
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.db
+*.dbmdl
+
+# 测试结果
+TestResult.xml
+
+# 项目用户特定文件
+*.csproj.user
+
+# 备份文件
+*.bak
+*.tmp
