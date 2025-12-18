@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace pat_cv_ui.views
+namespace pat_cv_ui.Views
 {
     /// <summary>
     /// Greeting.xaml 的交互逻辑
