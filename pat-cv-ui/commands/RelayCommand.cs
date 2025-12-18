@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace pat_cv_ui.commands
+namespace pat_cv_ui.Commands
 {
     public class RelayCommand : ICommand
     {

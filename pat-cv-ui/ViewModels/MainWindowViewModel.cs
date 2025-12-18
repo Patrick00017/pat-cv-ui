@@ -1,29 +1,44 @@
-﻿using pat_cv_ui.commands;
-using pat_cv_ui.models;
-using pat_cv_ui.views;
-using System;
-using System.Collections.Generic;
+﻿using pat_cv_ui.Commands;
+using pat_cv_ui.Models;
+using pat_cv_ui.Views;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace pat_cv_ui.viewmodels
+namespace pat_cv_ui.ViewModels
 {
-    public class MainViewModel
+    public class MainWindowViewModel: BindableBase
     {
-        public ObservableCollection<User> Users { get; set; }
+        public services.IUserStore _userStore = null;
+
+        public ObservableCollection<User> Users { get; private set; } = 
+            new ObservableCollection<User>();
 
         public ICommand ShowWindowCommand { get; set; }
         public ICommand AddUserCommand { get; set; }
 
+        private DelegateCommand _commandLoad = null;
+        public DelegateCommand CommandLoad =>
+            _commandLoad ?? (_commandLoad = new DelegateCommand(CommandLoadExecute));
+
+        private void CommandLoadExecute()
+        {
+            Users.Clear();
+            List<User> users = _userStore.GetAll();
+            foreach (User user in users)
+                Users.Add(user);
+        }
+
         public string? NameWait2Add { get; set; }
         public string? EmailWait2Add { get; set; }
 
-        public MainViewModel() {
-            Users = UserManager.getUsers();
+        public MainWindowViewModel(services.IUserStore userStore) 
+        {
+            //Users = UserManager.getUsers();
+
+            // inject
+            _userStore = userStore;
+
             ShowWindowCommand = new RelayCommand(ShowWindow, CanShowWindow);
             AddUserCommand = new RelayCommand(AddUser, CanAddUser);
         }
@@ -49,7 +64,7 @@ namespace pat_cv_ui.viewmodels
         {
             if (NameWait2Add != null && EmailWait2Add != null)
             {
-                UserManager.addUser(new User() { Name = NameWait2Add, Email = EmailWait2Add });
+                Users.Add(new User() { Name = NameWait2Add, Email = EmailWait2Add });
             }
         }
     }

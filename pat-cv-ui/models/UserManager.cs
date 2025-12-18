@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pat_cv_ui.models
+namespace pat_cv_ui.Models
 {
     public class UserManager
     {
