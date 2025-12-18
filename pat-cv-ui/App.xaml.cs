@@ -21,6 +21,7 @@ namespace pat_cv_ui
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            // register
             containerRegistry.Register<services.IUserStore, services.UserStore>();
         }
     }
