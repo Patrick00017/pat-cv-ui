@@ -1,0 +1,26 @@
+﻿<Window x:Class="Home.Views.HomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:viewmodels="clr-namespace:Home.ViewModels"
+        Title="{Binding Title}"
+        Width="1280"
+        Height="820"
+        MinWidth="1280"
+        MinHeight="820"
+        d:DataContext="{d:DesignData Type=viewmodels:MainWindowViewModel}"
+        WindowStartupLocation="CenterScreen"
+        >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+    </Grid>
+</Window>
