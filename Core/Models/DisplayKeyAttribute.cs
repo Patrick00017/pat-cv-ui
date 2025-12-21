@@ -16,7 +16,7 @@ namespace Core.Models
     {
         [DisplayKey("Menu.Home")]
         HOME,
-        [DisplayKey("Menu.Rank")]
-        RANK
+        [DisplayKey("Menu.Settings")]
+        SETTINGS
     }
 }
