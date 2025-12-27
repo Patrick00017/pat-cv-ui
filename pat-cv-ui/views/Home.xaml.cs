@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace pat_cv_ui.Views
+namespace pat_cv_ui.views
 {
     /// <summary>
-    /// Greeting.xaml 的交互逻辑
+    /// Home.xaml 的交互逻辑
     /// </summary>
-    public partial class Greeting : Window
+    public partial class Home : UserControl
     {
-        public Greeting()
+        public Home()
         {
             InitializeComponent();
         }

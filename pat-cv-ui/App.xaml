@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:pat_cv_ui"
              xmlns:prism="http://prismlibrary.com/">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="styles/Button.xaml"/>
+                <ResourceDictionary Source="styles/Image.xaml"/>
+                <ResourceDictionary Source="styles/Page.xaml"/>
+                <ResourceDictionary Source="styles/Text.xaml"/>
+                <ResourceDictionary Source="Utils/DataTemplate.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>
